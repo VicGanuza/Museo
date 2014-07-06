@@ -1,0 +1,13 @@
+<div class="main">
+<%_.each(obra, function(obra){%>
+	<h3><%= obra.get("titulo")%></h3>
+	<div class="obra">
+	 <%= obra.get("frame") %>
+	</div>
+ 	<div class="descripcion">
+	 <p><%= obra.get("descripcion_corta") %></p> 
+	</div>
+<%})%>
+</div>
+
+

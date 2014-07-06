@@ -1,0 +1,29 @@
+<div class="main">
+<h3>Contactenos</h3>
+<!--<form class="row" method="post" action="contacto.php" onsubmit="return validar(this);">			-->
+	<div class="span3">		
+	<label>Nombre y Apellido</label>					
+	<input type="text" name="nombre" id="nombre" class="required" placeholder="Su Nombre y apellido">			
+	</div>				
+	<div class="span3">			
+		<label>E-mail</label>			
+			<input type="email" class="required" id="email" name="correo" placeholder="@">
+	</div>					
+	<div class="span6" style="margin: 0 0 7px 21px;">	
+			<label>Asunto</label>
+			<select name="asunto" class="span6" style="padding: 4px 5px 3px 3px;">
+				<option value="1">Consulta</option>
+				<option value="3">Sugerencia</option>
+			</select>
+	</div>					
+	<div class="span6">	
+		<label>Mensaje</label>				
+		<textarea id="mensaje" class="required" name="mensaje" style="width:450px; resize: none;" rows="4" placeholder="Dejenos su mensaje, sugerencia o consulta!"></textarea>		
+		<p>						
+ 			<input type="submit" name="send" class="button yellow fr">&nbsp;<i class="icon-chevron-right"></i>		
+		</p>				
+	</div>				
+	<!--</form>-->
+</div>
+
+

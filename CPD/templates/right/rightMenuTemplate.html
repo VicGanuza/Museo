@@ -1,0 +1,63 @@
+<ul id="nivel1" class="nav-pane pane-top left_283">
+  <li class="level-0">
+    <div id="header_top" class="pane--header">
+     <p class="pane--title">obra/autor</p>
+     <div id="icono_top" class="content-nav--toggle content-nav--toggle-closed js-pane_top-open"></div>
+    </div>
+    <%_.each(autor, function(autor){%>
+    <section class="pane--content">
+    
+      <div class="nombre_autor"><%= autor.get("autores")%></div>
+      <div class="detalle">
+        <img class="imagen_autor" src="images/autor/<%= autor.get('imagen')%>">
+        <div class="autor_description">
+          <%= autor.get("descripcion_autor")%>
+          <!--(Buenos Aires, 1970)
+          Graduado en la Escuela Nacional de Bellas Artes de Pridiliano Pueyrredon, con una produccion que aborda tanto el lenguaje prictorico, como la grafica, la poesia visual y las intervenciones.-->
+        </div>
+      </div>
+      <ul class="boxes-list">
+        
+        <% if (autor.get('descarga')!=null){ %>
+        <li class="button_box">
+          <a href="<%= autor.get('descarga')%>" target="_bank">descarga </a>          
+        </li>
+       <% }%>
+       
+       
+        <li class="button_box js-pane_descripcion-open">
+          descripcion          
+        </li>
+        <li class="button_box js-pane_descripcion-open">
+          bio          
+        </li>
+      </ul>
+    </section>
+  </li>
+   <li class="level-1">
+    <div class="pane--header">
+     <p class="pane--title"> </p>
+    </div>
+    <div id="panel_descripcion" class="pane--content">
+      <%= autor.get("descripcion")%>
+    </div>    
+  </li>
+  <%})%>
+</ul>
+<ul id="nivel1_down" class="nav-pane pane-bottom left_283">
+  <li class="level-0">
+    <div id="header_top" class="pane--header">
+     <p class="pane--title">contenido</p>
+     <div id="icono_down" class="content-nav--toggle content-nav--toggle-closed js-pane_down-open"></div>
+    </div>
+    <div id="panel_contenidos" class="pane--content">
+    </div>
+  </li>
+  <li class="level-1">
+    <div class="pane--header">
+     <p class="pane--title">Categorias</p>
+    </div>
+    <div id="panel_categorias" class="pane--content">
+    </div>    
+  </li>
+</ul>

@@ -1,0 +1,41 @@
+<div class="columna_sonoros">
+	<h5>Categoria Arte sonoro</h5>
+	<%_.each(obras, function(obra){
+		if(obra.get("tipo")=="sonoro"){
+			if (obra.get("premio")=="Ganador"){%> 
+			     <div class="obra_detalle">
+			     <a href="#/obra/<%= obra.get("tag")%>">
+			     <h5>Premio</h5> <%}
+				else {%> 
+				 <div class="obra_detalle">
+			     <a href="#/obra/<%= obra.get("tag")%>">
+				 <h5><%= obra.get("premio")%></h5> 
+				 <%}%>
+			       	<div><%= obra.get("autores")%></div>
+					<div><%= obra.get("titulo")%></div>
+					<div><%= obra.get("lugar")%></div>
+				 </a>
+			    </div>
+	    <%}
+	})%>
+</div>
+<div class="columna_videos">
+	<h5>Categoria video arte</h5>
+	<%_.each(obras, function(obra){
+		if(obra.get("tipo")=="video"){%>
+		  	<%if (obra.get("premio")=="Ganador"){%> 
+			    <div class="obra_detalle">
+			     <a href="#/obra/<%= obra.get("tag")%>">
+			      <h5>Premio</h5> 
+			    <%}	else {%>
+				 <div class="obra_detalle">
+			      <a href="#/obra/<%= obra.get("tag")%>">
+			       <h5>Mencion jurado</h5> 
+			     <%}%>
+					<div><%= obra.get("autores")%></div>
+					<div><%= obra.get("titulo")%></div>
+					<div><%= obra.get("lugar")%></div>
+	  	          </a>
+    	        </div>
+	    <%}
+	})%>
