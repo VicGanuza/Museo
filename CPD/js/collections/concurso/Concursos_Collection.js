@@ -8,9 +8,6 @@ define([
     model: ConcursoModel,
     
     initialize: function(){
-
-      //this.add([project0, project1, project2, project3, project4]);
-
     }
 
   });

@@ -4,17 +4,14 @@ define([
   'underscore',
   'backbone',
   'views/home/HomeView',
-  'views/sonoros/SonorosView',
-  'views/videos/VideosView',
   'views/contacto/ContactoView',
-  'views/loggin/LogginView',
   'views/obra/ObraView',
   'views/right/RightView',
   'views/right/DetalleConcursoView',
+  'views/busqueda/biografia',
   'views/proyecto/ProyectoView',
   'views/creditos/CreditosView'
-   // 'views/footer/FooterView'
-], function($, _, Backbone, HomeView, SonorosView, VideosView, ContactoView, LogginView, ObraView, RightView, DetalleView, ProyectoView, CreditosView) {
+], function($, _, Backbone, HomeView, ContactoView, ObraView, RightView, DetalleView, BioView, ProyectoView, CreditosView) {
   
   var AppRouter = Backbone.Router.extend({
     routes: {
@@ -24,6 +21,7 @@ define([
       'premio/:id':'showPremios',
       'proyecto':'showProyecto',
       'creditos':'showCreditos',
+      'artista/:id': 'showBio',
       
       // Default
       '*actions': 'defaultAction'
@@ -78,6 +76,12 @@ define([
         var creditosView = new CreditosView();
         creditosView.render(id);
 
+    });
+
+    app_router.on('route:showBio', function(id){
+        // Call render on the module we loaded in via the dependency array
+        var bioView = new BioView();
+        bioView.render(id);
     });
 
 

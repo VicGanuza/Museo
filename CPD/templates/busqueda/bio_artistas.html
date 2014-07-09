@@ -1,0 +1,10 @@
+<div class="main">
+<%_.each(artista, function(a){%>
+ <div class="col_left">
+  <div class="right negrita"><%= a.get('nombre') %></div>
+  <img src="images/autor/<%= a.get('imagen')%>">
+  <div><%= a.get('web')%></div>
+ </div>
+ <div class="col_right"><%= a.get('descripcion')%></div> 
+ <%});%>
+</div>

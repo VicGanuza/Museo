@@ -4,7 +4,7 @@ define([
   'backbone',
   'views/footer/FooterView',
   'text!templates/contacto/contactoTemplate.html'
-], function($, _, Backbone/*, ContactoModel, ContactoCollection*/, FooterView, contactoTemplate){
+], function($, _, Backbone, FooterView, contactoTemplate){
 
   var ContactoView = Backbone.View.extend({
     el: $("#page"),

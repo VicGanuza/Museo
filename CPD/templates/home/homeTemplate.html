@@ -7,6 +7,38 @@
  	<div class="descripcion">
 	 <p><%= obra.get("descripcion_corta") %></p> 
 	</div>
+	<div class="data_extra">
+	  <%if (obra.get("duracion")!=null){ %>
+	   <div>
+	    <div class="titulo_extra">Duración: </div>
+	    <%= obra.get("duracion")%>
+	    </div>
+	  <%}%>
+	  <%if (obra.get("formato")!=null){ %>
+	   <div>
+	    <div class="titulo_extra">Formato: </div>
+	    <%= obra.get("formato")%>
+	    </div>
+	  <%}%>
+	  <%if (obra.get("codecs")!=false){ %>
+	   <div>
+	    <div class="titulo_extra">Códecs: </div>
+	    <%= obra.get("codecs")%>
+	    </div>
+	  <%}%>
+	  <%if (obra.get("dimension")!=null){ %>
+	   <div>
+	    <div class="titulo_extra">Dimension de la imagen: </div>
+	    <%= obra.get("dimension")%>
+	    </div>
+	  <%}%>
+	  <%if (obra.get("tamanio")!=''){ %>
+	   <div>
+	    <div class="titulo_extra">Tamaño del archivo: </div>
+	    <%= obra.get("tamanio")%>
+	    </div>
+	  <%}%>
+	</div>
 <%})%>
 </div>
 

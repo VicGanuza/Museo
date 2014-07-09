@@ -19,27 +19,24 @@ define([
     
 
      $('#nivel1_down').addClass('left_doble_negativo');
-     //var compiledTemplate = _.template(rightContentTemplate, data); 
-     // this.el.html(compiledTemplate);
-     //$('#panel_categorias').html(compiledTemplate);
 
      if (id==1){
-        concurso = "'"+"Bienal Nacional"+"'";
+        concurso = "Bienal";
         anio = 2013;
      }
 
      else {
       if (id==2) {
-         concurso= "'"+"Bahia [in] Sonora"+"'";
+         concurso= "Bahia";
          anio= 2013;
       }
       else {
         if (id==3){
-          concurso= "'"+"Bienal Regional"+"'";
+          concurso= "Bienal";
           anio= 2014;
         }
         else {
-          concurso= "'"+"Bahia [in] Sonora"+"'";
+          concurso= "Bahia";
           anio= 2014;
         }
       }
@@ -56,8 +53,6 @@ define([
       url:   'php/librerias.php',
       type:  'post',
       success:  function (response) {
-        // $("#resultado").html(response);
-       //alert(response);
       
        var dataJson = eval(response);
 

@@ -1,16 +1,16 @@
 <?php
 require 'conexion.php';
 
-$concurso = $_POST['concurso'];
-$anio = $_POST['anio'];
+$id = $_POST['id'];
 
-function Buscar_Concursantes($concurso,$anio){
+function Buscar_Bio($id){
+
     //Creamos la conexión con la función anterior
     $conexion = connectDB();
 
     //generamos la consulta
-    $sql = "SELECT Titulo, Tipo, Premio FROM obras WHERE Concurso=$concurso  AND Anio=$anio";
-
+    $sql  = "SELECT Nombre, Apellido, Imagen, Descripcion, Web FROM autor WHERE id=$id";
+   
     mysqli_set_charset($conexion, "utf8"); //formato de datos utf8
 
     if(!$result = mysqli_query($conexion, $sql)) die(); //si la conexión cancelar programa
@@ -21,8 +21,13 @@ function Buscar_Concursantes($concurso,$anio){
     $i=0;
 
     while($row = mysqli_fetch_array($result))
-    {
-        $rawdata[$i] = array('Titulo' => $row['Titulo'],  'Tipo' => $row['Tipo'], 'Premio' => $row['Premio']);;
+    {   $nombre = $row['Nombre']." ".$row['Apellido'];
+
+        $rawdata[$i] = array('Nombre' => $nombre,
+                             'Imagen' => $row['Imagen'],
+                             'Web' => $row['Web'],
+                             'Descripcion' => $row['Descripcion']
+                             );
         $i++;
     }
 
@@ -31,6 +36,7 @@ function Buscar_Concursantes($concurso,$anio){
     return $rawdata; //devolvemos el array
 }
 
-$myArray = Buscar_Concursantes($concurso,$anio);
+$myArray = Buscar_Bio($id);
 echo json_encode($myArray);
+
 ?>

@@ -1,0 +1,12 @@
+<div class="main cuerpo_buscador">
+<%_.each(obra, function(o){%>
+  <a href="#/obra/<%= o.get('id')%>"> 
+  <div class="bloque_busqueda">
+	<div class="titulo_obra">
+	<%= o.get('nombre')%>
+	</div>
+	<%= o.get('autor')%>
+  </div>
+  </a>
+  <%});%>
+</div>

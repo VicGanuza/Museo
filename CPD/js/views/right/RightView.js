@@ -16,7 +16,6 @@ define([
       'click .js-pane_down-open': 'abrir_panel_down',
       'click .js-pane_down-close': 'cerrar_panel_down',
       'click .js-pane_descripcion-open': 'mostrar_descripcion'
-     // 'click .subir': 'subir'
     },
 
     abrir_panel_top: function(){
@@ -25,6 +24,7 @@ define([
       $('#icono_top').removeClass('js-pane_top-open');
       $('header').addClass('nav-opened');
       $('#icono_top').addClass('js-pane_top-close');
+      $('.inner_buscador').addClass('margin_rigth-330');
     },
 
     cerrar_panel_top: function(){
@@ -34,6 +34,7 @@ define([
       $('#icono_top').addClass('content-nav--toggle-closed');
       $('#icono_top').addClass('js-pane_top-open');
       $('#icono_top').removeClass('js-pane_top-close');
+      $('.inner_buscador').removeClass('margin_rigth-330');
     },
 
     abrir_panel_down: function(){
@@ -67,13 +68,16 @@ define([
     render: function(id){
     	if (!id){
           var data = new ConcursoModel({
-             autores : "Alejandro Thornton, Paula Pellejero",
-             descripcion : "",
-             imagen: "Alejandro_Thornton.png",
-             descripcion_autor: "Buenos Aires, 1970. <br> Graduado en la Escuela Nacional de Bellas Artes Pridiliano Pueyrredón, con una producción que aborda tanto el lenguaje pictórico, como la gráfica, la poesía visual y las intervenciones. Ha sido seleccionado en importantes premios y bienales tanto en Argentina como en el exterior.",
-             descarga: "Torrents/Videos/Eva_rebelde_Pellejero_Thornton_2012_avi.zip",
-             _: _ 
-            });
+               autor : "Alejandro Thornton",
+               colaboradores: "Paula, Pellejero",
+               titulo: "Eva revelde",
+               descripcion : "kjsfkldhasfjhasdfhasdklfhasdlkfhasdofhaskdfaskjdfhasjd fhasjhfiauwehskadjfhakjsdhaiuwehfaskjdfhaksjdhfaiewuhaf asdf as asdf asd a ",
+               imagen: "Alejandro_Thornton.png",
+               descripcion_autor: "Buenos Aires, 1970. <br> Graduado en la Escuela Nacional de Bellas Artes Pridiliano Pueyrredón, con una producción que aborda tanto el lenguaje pictórico, como la gráfica, la poesía visual y las intervenciones. Ha sido seleccionado en importantes premios y bienales tanto en Argentina como en el exterior.",
+               descarga: "Torrents/Videos/Eva_rebelde_Pellejero_Thornton_2012_avi.zip",
+               id_autor: 2,
+               _: _ 
+              });
 
         var list_collection = new ConcursoCollection(data);
      	  var autor = new AutorView({collection: list_collection});
@@ -95,11 +99,14 @@ define([
 		     
       	     	 for(var i in dataJson){
       	     	   var data = new ConcursoModel({
-      	     	     autores: dataJson[i].Autores,
+      	     	     autor: dataJson[i].Autor,
+                   colaboradores: dataJson[i].Colaboradores,
+                   titulo: dataJson[i].Titulo,
       	     	     descripcion: dataJson[i].Descripcion,
       	     	     imagen: dataJson[i].Imagen,
       	     	     descripcion_autor: dataJson[i].Descripcion_Autor,
-      	     	     descarga: dataJson[i].Descarga
+      	     	     descarga: dataJson[i].Descarga,
+                   id_autor: dataJson[i].Id_autor
       	     	   });
       	     	 }
      

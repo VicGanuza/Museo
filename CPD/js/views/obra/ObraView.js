@@ -3,11 +3,8 @@ define([
   'underscore',
   'backbone',
   'views/right/RightView',
-  //'models/videos/videosModel',
-  //'collections/obras/ObrasCollection',
   'views/home/HomeView',
-  //'text!templates/description/descriptionTemplate.html'
-], function($, _, Backbone, RightView, HomeView){//VideosModel, ObrasCollection
+], function($, _, Backbone, RightView, HomeView){
 
   var ObraView = Backbone.View.extend({
     el: $("#page"),

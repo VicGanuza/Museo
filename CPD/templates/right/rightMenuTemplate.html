@@ -7,13 +7,11 @@
     <%_.each(autor, function(autor){%>
     <section class="pane--content">
     
-      <div class="nombre_autor"><%= autor.get("autores")%></div>
+      <div class="nombre_autor"><%= autor.get("autor")%></div>
       <div class="detalle">
         <img class="imagen_autor" src="images/autor/<%= autor.get('imagen')%>">
         <div class="autor_description">
           <%= autor.get("descripcion_autor")%>
-          <!--(Buenos Aires, 1970)
-          Graduado en la Escuela Nacional de Bellas Artes de Pridiliano Pueyrredon, con una produccion que aborda tanto el lenguaje prictorico, como la grafica, la poesia visual y las intervenciones.-->
         </div>
       </div>
       <ul class="boxes-list">
@@ -28,8 +26,8 @@
         <li class="button_box js-pane_descripcion-open">
           descripcion          
         </li>
-        <li class="button_box js-pane_descripcion-open">
-          bio          
+        <li class="button_box">
+          <a href="#/artista/<%= autor.get('id_autor')%>"> bio </a>         
         </li>
       </ul>
     </section>
@@ -39,6 +37,9 @@
      <p class="pane--title"> </p>
     </div>
     <div id="panel_descripcion" class="pane--content">
+      <div class="nombre_obra"><%= autor.get("titulo")%></div>
+      <div class="nombre_autor"><%= autor.get("autor")%></div>
+      <div class="negrita"><%= autor.get("colaboradores")%></div>
       <%= autor.get("descripcion")%>
     </div>    
   </li>

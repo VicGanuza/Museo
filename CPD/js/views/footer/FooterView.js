@@ -37,22 +37,6 @@ define([
         this.desc += "SON DIGITALES conserva, archiva y permite el acceso a las obras.<br> ";
         this.desc += "La conservación se da a través del almacenamiento de las creaciones en un servidor propio y de la incorporación de información contextual sobre su producción y reproducción. El acceso se da por dos vias: la reproducción on line y la descarga en máxima calidad.<br>";
         this.desc += "SON DIGITALES estará en constante crecimiento con la incorporación de nuevas obras y nuevos nodos a su red.<br>";
-
-      
-
-      
-/*
-      var that = this;
-      var options = {query: 'thomasdavis'}
-     
-
-      var onDataHandler = function(collection) {
-          that.render();
-      }
-
-      this.model = new OwnerModel(options);
-      this.model.fetch({ success : onDataHandler, dataType: "jsonp"});*/
-
     },
 
     render: function(){

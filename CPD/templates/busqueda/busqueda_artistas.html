@@ -1,0 +1,8 @@
+<div class="main cuerpo_buscador">
+ <%_.each(artistas, function(a){%>
+  <a class="bloque_busqueda" href="#/artista/<%= a.get('id')%>">
+	<img class="imagen_autor" src="images/autor/<%= a.get('imagen')%>">
+	<%= a.get('nombre')%>
+  </a>
+ <%});%>
+</div>

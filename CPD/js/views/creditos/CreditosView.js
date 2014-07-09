@@ -2,10 +2,9 @@ define([
   'jquery',
   'underscore',
   'backbone',
-/*  'models/contacto/ContactoModel',
-  'collections/contacto/ContactoCollection',*/
+  'views/busqueda/buscador',
   'text!templates/creditos/creditosTemplate.html'
-], function($, _, Backbone/*, ContactoModel, ContactoCollection*/, creditosTemplate){
+], function($, _, Backbone, BuscadorView, creditosTemplate){
 
   var CreditosView = Backbone.View.extend({
     el: $("#page"),
@@ -17,6 +16,9 @@ define([
 	  
       console.log("creditos");
       this.$el.html(creditosTemplate);
+
+      var buscadorView = new BuscadorView();
+      buscadorView.render();
 
       }
      });

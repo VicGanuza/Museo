@@ -2,10 +2,9 @@ define([
   'jquery',
   'underscore',
   'backbone',
-/*  'models/contacto/ContactoModel',
-  'collections/contacto/ContactoCollection',*/
+  'views/busqueda/buscador',
   'text!templates/proyecto/proyectoTemplate.html'
-], function($, _, Backbone/*, ContactoModel, ContactoCollection*/, proyectoTemplate){
+], function($, _, Backbone, BuscadorView, proyectoTemplate){
 
   var ProyectoView = Backbone.View.extend({
     el: $("#page"),
@@ -17,6 +16,9 @@ define([
 	  
       console.log("En contacto");
       this.$el.html(proyectoTemplate);
+
+       var buscadorView = new BuscadorView();
+        buscadorView.render();
 
       }
      });
