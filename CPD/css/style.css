@@ -470,6 +470,7 @@ img {
 	margin-top: 100px;
 	width: 100%;
 	text-align: center;
+	float: left;
 }
 .logos_cred img{
 	margin-left: 100px;
