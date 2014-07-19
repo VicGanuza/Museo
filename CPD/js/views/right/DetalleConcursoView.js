@@ -5,8 +5,9 @@ define([
   'models/concurso/ConcursoModel',
   'collections/concurso/Concursos_Collection',
   'views/right/GanadoresView',
+  'views/busqueda/buscador',
   'text!templates/right/rightContentTemplate.html'
-], function($, _, Backbone, ConcursoModel, ConcursoCollection, ganadoresView,rightContentTemplate){
+], function($, _, Backbone, ConcursoModel, ConcursoCollection, ganadoresView, BuscadorView, rightContentTemplate){
 
   var DetalleView = Backbone.View.extend({
     el: $('#panel_categorias'),
@@ -57,10 +58,16 @@ define([
        var dataJson = eval(response);
 
        for(var i in dataJson){
+          if (concurso=="Bahia"){
+            premio= null;
+          }
+          else{
+            premio=dataJson[i].Premio;
+          }
          var dato = new ConcursoModel({
            tag: dataJson[i].id,
            titulo: dataJson[i].Titulo,
-           premio: dataJson[i].Premio,
+           premio: premio,
            tipo: dataJson[i].Tipo,
            lugar: dataJson[i].Lugar,
            autores: dataJson[i].Autores
@@ -73,7 +80,10 @@ define([
       list_obras.render();
       }  
 
+
     });
+    var buscadorView = new BuscadorView();
+      buscadorView.render();
 
   }
 

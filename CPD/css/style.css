@@ -77,6 +77,9 @@ img {
 	float: left;
 	margin-right: 10px;
 }
+.bold{
+	font-weight: bold;
+}
 .main{
 	width: 90%;
 	padding-left: 20px;
@@ -92,15 +95,14 @@ img {
 	width: 100%;
 	height: 100%;
 	background-color: #46A6F7;
-	display: table;
 }
 .container-home{
-	width: 100%;
+	max-width: 1000px;
 	height: 200px;
 	margin: 0 auto;
-	display: table-cell;
-	vertical-align: middle;
-	padding: 50px;
+	/*padding: 50px;*/
+	position: relative;
+	top:30%;
 }
 .logo{
 	float: left;
@@ -108,16 +110,15 @@ img {
 	font-size: small;
 	font-family: "SolexMedium";
     font-size: 20px;
-    max-width: 690px
+    max-width: 690px;
     margin-right: 20px;
 }
 .footer{
 	bottom: 0;
 	position: fixed;
-	right: 0;
-	left: 0;
-	padding: 20px 20px 0px 40px;
-	text-align: right;
+	width: 100%;
+	padding-bottom: 20px;
+	text-align: center;
 }
 .footer p{
 	margin-right: 100px;
@@ -533,4 +534,8 @@ img {
 	float: right;
 	margin-right: 100px;
 	height: 1200px;
+}
+.inicio-home .footer img{
+	margin: 0 auto;
+	float: none;
 }

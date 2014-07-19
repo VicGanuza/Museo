@@ -33,7 +33,7 @@ define([
      
         this.titulo = "Son Digitales";
         this.subtitulo = "Plataforma para la Conservación de Obras de Arte Digital";
-        this.desc = "En esta primera etapa la plataforma incluye obras de video arte y de arte sonoro de dos nodos de Bahía Blanca: los museos de arte MBA-MAC y el festival Bahía[in] sonora. De este modo conforma una red local.<br>";
+        this.desc = "En esta primera etapa la plataforma incluye obras de video arte y de arte sonoro de dos nodos de Bahía Blanca: los museos de arte MBA-MAC y el festival Bahía[in]sonora. De este modo conforma una red local.<br>";
         this.desc += "SON DIGITALES conserva, archiva y permite el acceso a las obras.<br> ";
         this.desc += "La conservación se da a través del almacenamiento de las creaciones en un servidor propio y de la incorporación de información contextual sobre su producción y reproducción. El acceso se da por dos vias: la reproducción on line y la descarga en máxima calidad.<br>";
         this.desc += "SON DIGITALES estará en constante crecimiento con la incorporación de nuevas obras y nuevos nodos a su red.<br>";

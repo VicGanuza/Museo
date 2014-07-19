@@ -1,21 +1,22 @@
 <div class="columna_sonoros">
-	<h5>Categoria Arte sonoro</h5>
+	<h5>Categoria arte sonoro</h5>
 	<%_.each(obras, function(obra){
-		if(obra.get("tipo")=="sonoro"){
-			if (obra.get("premio")=="Ganador"){%> 
-			     <div class="obra_detalle">
-			     <a href="#/obra/<%= obra.get("tag")%>">
-			     <h5>Premio</h5> <%}
-				else {%> 
-				 <div class="obra_detalle">
-			     <a href="#/obra/<%= obra.get("tag")%>">
-				 <h5><%= obra.get("premio")%></h5> 
-				 <%}%>
-			       	<div><%= obra.get("autores")%></div>
-					<div><%= obra.get("titulo")%></div>
-					<div><%= obra.get("lugar")%></div>
-				 </a>
-			    </div>
+		if(obra.get("tipo")=="sonoro"){%>
+		    <div class="obra_detalle">
+			<a href="#/obra/<%= obra.get("tag")%>">
+			  <%
+			  if (obra.get('premio')!=null){
+			    if (obra.get("premio")=="Ganador"){%> 
+			       <h5>Premio</h5> <%}
+			    else {%> 
+			  	   <h5>Mencion jurado</h5> 
+			 	   <%}
+			  }%>
+	       	  <div><%= obra.get("autores")%></div>
+      		  <div class="bold"><%= obra.get("titulo")%></div>
+			  <div><%= obra.get("lugar")%></div>
+		    </a>
+			</div>
 	    <%}
 	})%>
 </div>
@@ -23,19 +24,20 @@
 	<h5>Categoria video arte</h5>
 	<%_.each(obras, function(obra){
 		if(obra.get("tipo")=="video"){%>
-		  	<%if (obra.get("premio")=="Ganador"){%> 
-			    <div class="obra_detalle">
-			     <a href="#/obra/<%= obra.get("tag")%>">
-			      <h5>Premio</h5> 
-			    <%}	else {%>
-				 <div class="obra_detalle">
-			      <a href="#/obra/<%= obra.get("tag")%>">
-			       <h5>Mencion jurado</h5> 
-			     <%}%>
-					<div><%= obra.get("autores")%></div>
-					<div><%= obra.get("titulo")%></div>
-					<div><%= obra.get("lugar")%></div>
-	  	          </a>
-    	        </div>
+		  	<div class="obra_detalle">
+			<a href="#/obra/<%= obra.get("tag")%>">
+			  <%
+			  if (obra.get('premio')!=null){
+			    if (obra.get("premio")=="Ganador"){%> 
+			       <h5>Premio</h5> <%}
+			    else {%> 
+			  	   <h5>Mencion jurado</h5> 
+			 	   <%}
+			  }%>
+			  <div><%= obra.get("autores")%></div>
+			  <div class="bold"><%= obra.get("titulo")%></div>
+			  <div><%= obra.get("lugar")%></div>
+	  	    </a>
+    	    </div>
 	    <%}
 	})%>
