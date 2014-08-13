@@ -4,8 +4,8 @@ define([
   'backbone',
   'models/concurso/ConcursoModel',
   'collections/concurso/Concursos_Collection',
- 'views/right/ContentRightView',
-   'views/right/AutorView',
+  'views/right/ContentRightView',
+  'views/right/AutorView',
 ], function($, _, Backbone, ConcursoModel, ConcursoCollection, ContentView, AutorView){
 
   var RightView = Backbone.View.extend({
@@ -15,7 +15,7 @@ define([
       'click .js-pane_top-close': 'cerrar_panel_top',
       'click .js-pane_down-open': 'abrir_panel_down',
       'click .js-pane_down-close': 'cerrar_panel_down',
-      'click .js-pane_descripcion-open': 'mostrar_descripcion'
+      'click .js-pane_descripcion-open': 'mostrar_descripcion',
     },
 
     abrir_panel_top: function(){
@@ -61,6 +61,7 @@ define([
       $('.close').removeClass('display_none');
       $('.subir').addClass('display_none');
     },
+
     mostrar_descripcion: function(){
       $('#nivel1').addClass('left_negativo');
     },
@@ -68,10 +69,11 @@ define([
     render: function(id){
     	if (!id){
           var data = new ConcursoModel({
+               id_obra: 1,
                autor : "Alejandro Thornton",
                colaboradores: "Paula, Pellejero",
                titulo: "Eva revelde",
-               descripcion : "kjsfkldhasfjhasdfhasdklfhasdlkfhasdofhaskdfaskjdfhasjd fhasjhfiauwehskadjfhakjsdhaiuwehfaskjdfhaksjdhfaiewuhaf asdf as asdf asd a ",
+               descripcion : "",
                imagen: "Alejandro_Thornton.png",
                descripcion_autor: "Buenos Aires, 1970. <br> Graduado en la Escuela Nacional de Bellas Artes Pridiliano Pueyrredón, con una producción que aborda tanto el lenguaje pictórico, como la gráfica, la poesía visual y las intervenciones. Ha sido seleccionado en importantes premios y bienales tanto en Argentina como en el exterior.",
                descarga: "Torrents/Videos/Eva_rebelde_Pellejero_Thornton_2012_avi.zip",
@@ -99,6 +101,7 @@ define([
 		     
       	     	 for(var i in dataJson){
       	     	   var data = new ConcursoModel({
+                   id_obra: dataJson[i].Id,
       	     	     autor: dataJson[i].Autor,
                    colaboradores: dataJson[i].Colaboradores,
                    titulo: dataJson[i].Titulo,

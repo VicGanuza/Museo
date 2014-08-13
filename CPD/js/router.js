@@ -10,8 +10,9 @@ define([
   'views/right/DetalleConcursoView',
   'views/busqueda/biografia',
   'views/proyecto/ProyectoView',
-  'views/creditos/CreditosView'
-], function($, _, Backbone, HomeView, ContactoView, ObraView, RightView, DetalleView, BioView, ProyectoView, CreditosView) {
+  'views/creditos/CreditosView',
+  'views/entrevistas/EntrevistaView'
+], function($, _, Backbone, HomeView, ContactoView, ObraView, RightView, DetalleView, BioView, ProyectoView, CreditosView, EntrevistaView) {
   
   var AppRouter = Backbone.Router.extend({
     routes: {
@@ -22,6 +23,7 @@ define([
       'proyecto':'showProyecto',
       'creditos':'showCreditos',
       'artista/:id': 'showBio',
+      'entrevistas/:id': 'showEntrev',
       
       // Default
       '*actions': 'defaultAction'
@@ -41,9 +43,15 @@ define([
 
     });
 
-    app_router.on('route:showObra', function(id){
-      console.log(id);
+    app_router.on('route:showEntrev', function(id){
    
+        // Call render on the module we loaded in via the dependency array
+        var entreView = new EntrevistaView();
+        entreView.render(id);
+
+    });
+
+    app_router.on('route:showObra', function(id){
         // Call render on the module we loaded in via the dependency array
         var obraView = new ObraView();
         obraView.render(id);

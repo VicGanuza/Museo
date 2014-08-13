@@ -9,7 +9,7 @@ function Buscar_Obra($id){
     $conexion = connectDB();
 
     //generamos la consulta
-    $sql  = "SELECT Titulo, Descripcion, Link_descarga, Descripcion_Corta, OnLine, ";
+    $sql  = "SELECT id, Titulo, Descripcion, Link_descarga, Descripcion_Corta, OnLine, ";
     $sql .= "Duracion, Tamanio, Unidad_tam, Formato, Dimension_imagen, ";
     $sql .= "Id_Autor, Id_Colaborador_1, Id_Colaborador_2 ";
     $sql .= "FROM obras WHERE id=$id";
@@ -84,7 +84,8 @@ function Buscar_Obra($id){
         $Titulo = substr($Titulo,1);
         $Titulo = substr($Titulo, 0,-1);
 
-        $rawdata[$i] = array('Descripcion' => $row['Descripcion'],
+        $rawdata[$i] = array('Id' => $row['id'],
+                             'Descripcion' => $row['Descripcion'],
                              'Imagen' => $imagen,
                              'Descripcion_Autor' => $desc_autores,
                              'Descarga' => $row['Link_descarga'],

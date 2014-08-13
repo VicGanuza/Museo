@@ -319,6 +319,7 @@ img {
 	overflow: scroll;
 	overflow-x: hidden;
 }
+
 .pane-top .pane--content {
 	padding-top: 10px;
 }
@@ -430,6 +431,10 @@ img {
 	text-transform: uppercase;
 	font-size: 0.68em;
 }
+.level-1 .boxes-list{
+	margin-left: 50px;
+	bottom: 13px;
+}
 .list-concursos{
 	width: 65%;
 	margin-left: 10px;
@@ -534,9 +539,17 @@ img {
 	width: 535px;
 	float: right;
 	margin-right: 100px;
-	height: 1200px;
+	height: 4500px;
 }
 .inicio-home .footer img{
 	margin: 0 auto;
 	float: none;
+}
+.respuesta{
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.seccion{
+	font-weight: bold;
+	margin-bottom: 10px;
 }

@@ -41,7 +41,13 @@
       <div class="nombre_autor"><%= autor.get("autor")%></div>
       <div class="negrita"><%= autor.get("colaboradores")%></div>
       <%= autor.get("descripcion")%>
-    </div>    
+    </div> 
+    <ul class="boxes-list">
+        <li class="button_box">
+          <a href="#/entrevistas/<%= autor.get('id_obra')%>">entrevista </a>
+        </li>
+        
+      </ul>   
   </li>
   <%})%>
 </ul>
